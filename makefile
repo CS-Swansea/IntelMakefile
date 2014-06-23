@@ -12,14 +12,14 @@ BINPATH=./bin
 # Compiler flags
 # Use the -mmic flag for native phi binaries
 CFLAGS= -Wall 						\
-		-openmp 				\
-		-vec-report=6 				\
-		-ansi-alias 				\
-		-O3 					\
-		-restrict 				\
-		-fp-model fast 				\
-		-opt-assume-safe-padding 		\
-		-I$(INCPATH)
+	-openmp 					\
+	-vec-report=6 					\
+	-ansi-alias 					\
+	-O3 						\
+	-restrict 					\
+	-fp-model fast 					\
+	-opt-assume-safe-padding 			\
+	-I$(INCPATH)
 
 # Linker flags
 LFLAGS= # Nothing... yet 
