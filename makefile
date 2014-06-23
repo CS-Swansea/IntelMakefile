@@ -12,13 +12,13 @@ BINPATH=./bin
 # Compiler flags
 # Use the -mmic flag for native phi binaries
 CFLAGS= -Wall 						\
-		-openmp 					\
+		-openmp 				\
 		-vec-report=6 				\
 		-ansi-alias 				\
-		-O3 						\
-		-restrict 					\
+		-O3 					\
+		-restrict 				\
 		-fp-model fast 				\
-		-opt-assume-safe-padding 	\
+		-opt-assume-safe-padding 		\
 		-I$(INCPATH)
 
 # Linker flags
@@ -30,9 +30,9 @@ BIN=nameofyourprogram
 # Create a version of all compiled file names
 # with a .o extension
 SRCS=$(wildcard *.cpp *.cxx *.c)
-OBJS=$(patsubst %.cpp,%.o, 			\
-	 $(patsubst %.cxx,%.o, 			\
-	 $(patsubst %.c,%.o, $(SRCS))))
+OBJS=$(patsubst %.cpp,%.o, 				\
+	 $(patsubst %.cxx,%.o, 				\
+	 $(patsubst %.c,%.o, $(SRCS))))	
 
 # The whole shebang!
 all: clear $(BIN)
@@ -51,8 +51,8 @@ all: clear $(BIN)
 # Main unit of compilation - generates binary
 $(BIN): $(OBJS)
 	mkdir -p $(BINPATH)
-	$(CXX) $(CFLAGS) -o $(BINPATH)/$(BIN) \
-	$(foreach OBJ, $(OBJS), $(OBJPATH)/$(OBJ))
+	$(CXX) $(CFLAGS) -o $(BINPATH)/$(BIN) 		\
+		$(foreach OBJ, $(OBJS), $(OBJPATH)/$(OBJ))
 
 # Make clean - remove obj.o files
 clean:
