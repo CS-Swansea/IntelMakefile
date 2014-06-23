@@ -25,7 +25,7 @@ CFLAGS= -Wall 						\
 LFLAGS= # Nothing... yet 
 
 # Binary name
-BIN=cdf
+BIN=nameofyourprogram
 
 # Create a version of all compiled file names
 # with a .o extension
